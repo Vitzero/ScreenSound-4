@@ -11,7 +11,8 @@ namespace ScreenSound_04.Filters
     {
         public static void ShowAllGenres(List<Song> songs)
         {
-            var AllGenresMusic = songs.Select(s => s.Genre)
+            var AllGenresMusic = songs
+                .Select(s => s.Genre)
                 .Distinct()
                 .ToList();
 
