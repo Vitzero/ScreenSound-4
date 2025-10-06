@@ -2,6 +2,13 @@
 using System.Text.Json;
 using ScreenSound_04.Filters;
 
+List<Song> retornaListaSonsTons(List<Song> listaSons, string tom)
+{
+    var songsCSharp = listaSons.Where(s => s.Tone == tom).ToList();
+
+    return songsCSharp;
+}
+
 using (HttpClient client = new HttpClient())
 {
     try
@@ -27,6 +34,20 @@ using (HttpClient client = new HttpClient())
         FavoriteSongsVitor.ShowFavoriteSongs();
 
         FavoriteSongsVitor.CreateJsonWithSongs();
+
+        //foreach (var song in songs)
+        //{
+        //    song.ShowDetailsOfSong();
+        //    Console.WriteLine();
+        //}
+        var x = retornaListaSonsTons(songs, "C#");
+
+        foreach (var somComTonalidadeCsharp in x)
+        {
+            somComTonalidadeCsharp.ShowDetailsOfSong();
+            Console.WriteLine();
+        }
+        
     }
     catch (Exception ex)
     {
