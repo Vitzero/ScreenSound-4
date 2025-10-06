@@ -13,11 +13,20 @@ using (HttpClient client = new HttpClient())
         //LinqOrder.ShowGenresPerArtist("rock", songs);
         //LinqOrder.ShowSongsPerArtist("U2", songs);
         //LinqOrder.ShowSongsPerYear(2012, songs);
-        
+
         //filter
         //LinqOrder.ShowAllGenres(songs);
 
+        var FavoriteSongsVitor = new FavoriteSongs("Vitor");
+        FavoriteSongsVitor.AddFavoriteMusic(songs[234]);
+        FavoriteSongsVitor.AddFavoriteMusic(songs[654]);
+        FavoriteSongsVitor.AddFavoriteMusic(songs[356]);
+        FavoriteSongsVitor.AddFavoriteMusic(songs[112]);
+        FavoriteSongsVitor.AddFavoriteMusic(songs[511]);
 
+        FavoriteSongsVitor.ShowFavoriteSongs();
+
+        FavoriteSongsVitor.CreateJsonWithSongs();
     }
     catch (Exception ex)
     {
