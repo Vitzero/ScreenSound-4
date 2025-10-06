@@ -4,7 +4,8 @@ namespace ScreenSound_04.Modelos;
 
 internal class Song
 {
-    private string[] tone = { "C", "C#", "D", "Eb", "E", "F", "F#", "G", "Ab", "A", "Bb", "B" };
+    [JsonPropertyName("key")]
+    private string[] tone = { "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B" };
 
     [JsonPropertyName("song")]
     public string? Name { get; set; }
